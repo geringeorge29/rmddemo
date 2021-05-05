@@ -1,0 +1,31 @@
+---
+title: "Rmarkdowndemo"
+author: "Gerin George"
+date: "5/4/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library("knitr")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+source("analysis.R")
+```
+## This is a demo of R Markdown to show what we can do
+
+According to the Hofstede dataset the country with the highest
+individualism was `r max_idv_country_chain`
+
+The country with the highest collectivism was `r min_idv_country_chain`.
+
+#### Summary of Individualism Values: 
+```{r, echo=FALSE}
+kable(idv_summary_chain)
+```
+
+#### Table of Countries Sorted by Individualism Scores
+```{r, echo=FALSE}
+kable(idv_data_df)
+```
